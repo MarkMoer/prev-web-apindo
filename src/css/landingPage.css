@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+
+body {
+    font-family: 'Poppins';
+    position: relative;
+}
+
+.navbar {
+    background-color: #ffff;
+    font-weight: 400;
+}
+
+section {
+    height: 100vh;
+    width: 100%;
+}
+
+.jumbotron {
+    padding-top: 2.5rem;
+}
+
+.navbar .linkItem::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: #6EC1E4;
+    margin: auto;
+    display: block;
+}
+
+.navbar .linkItem:hover::after {
+    width: 100%;
+    transition: width 0.35s linear;
+}
+
+.navbar .linkItem:hover {
+    color: #6EC1E4 !important;
+}
+
+/* .navbar .active {
+    color: #6EC1E4 !important;
+} */
+
+.footer {
+    background-color: #6EC1E4;
+    font-weight: 500;
+    color: black;
+}
+
+/* .carouselCaption{
+ color: black;
+} */
+.carousel-item {
+    background-color: black;
+
+}
+
+.carousel-caption {
+    font-size: 36px;
+    font-weight: 500;
+    color: white;
+    top: 35%;
+    left: auto;
+    text-shadow: 2px;
+}
+
+.carousel-caption h1 {
+    text-align: left;
+    font-size: 42px;
+    text-shadow: 2px 3px #000000;
+}
+
+.carousel-caption .btn {
+    color: #fff;
+    float: left;
+    margin-top: 1rem;
+    font-weight: 500;
+    text-shadow: 1px 1px #000000;
+}
+
+.col h2 {
+    font-weight: 700;
+}
+
+.col p {
+    font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+    .carousel-caption h1 {
+        font-size: 36px;
+    }
+    .col h2 {
+        font-size: 24px;
+        font-weight: 700;
+    }
+}
