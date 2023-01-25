@@ -1,0 +1,61 @@
+section .berandaAd{
+    height: 100%;
+    width: 100%;
+    background-color: #FFFF;
+    font-family: "Montserrat";
+    justify-content: center;
+    text-align: left;
+}
+
+.pictureWrapper{
+    padding-top:1rem ;
+}
+
+.pictureCard{
+    height: auto;
+    margin:5px;
+    padding: 5px;
+}
+
+.pictures{
+    height: 180px;
+}
+.formWrapper{
+    font-family: "Montserrat";
+    margin-top: 2.5rem;
+}
+.tambah-gambar{
+    margin-top: 2.5rem;
+}
+.card-title{
+    font-size: 100px;
+}
+.berandaAd{
+    padding-top: 3rem;
+    color: brown;
+    height: 100vh;
+}
+.jumbotron-picture , .jumbotron-news{
+    padding-top: 2.5rem;
+    background-color: #eef8ff;
+    height: 100vw;
+    font-family: "Montserrat";
+    justify-content: center;
+    text-align: left;
+}
+.dash-admin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: 500;
+    color: #2B2b2b;
+    text-shadow: 2px;
+    height: 100%;
+    width: 100%;
+}
+@media screen and (max-width: 768px) {
+    .jumbotron-picture , .jumbotron-news{
+        height: 100%;
+    }
+}

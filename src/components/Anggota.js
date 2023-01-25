@@ -1,4 +1,4 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 
 const Anggota = () => {
     return (
@@ -10,7 +10,13 @@ const Anggota = () => {
                 <Col md><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur ipsum, doloribus facere voluptatum omnis possimus eius quos autem voluptatibus, aliquam sit deleniti aut nam expedita!</p></Col>
                 <Col md><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus nam delectus quod recusandae corporis sapiente magni neque voluptatem non repellendus quam molestias blanditiis repellat quidem corrupti optio, error ea culpa.</p></Col>
             </Row>
-        </Container>
+            <div className="d-grid gap-2 formButton ">
+                <Button variant="outline-dark mt-3 mb-3 text-uppercase" size="lg">
+                    Formulir Pendaftaran
+                </Button>
+            </div>
+
+        </Container >
     )
 }
 

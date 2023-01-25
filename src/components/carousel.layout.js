@@ -4,7 +4,14 @@ import gb2 from '../img/gb2.jpg';
 import gb3 from '../img/gb3.jpg';
 import React from 'react'
 
-const CarouselLay = () => {
+const CarouselLay = ({ refs }) => {
+    const goto = (ref) => {
+        window.scrollTo({
+            top: ref.offsetTop - 48,
+            left: 0,
+            behavior: 'smooth'
+        })
+    }
     return (
         <Carousel>
             <Carousel.Item>
@@ -20,7 +27,7 @@ const CarouselLay = () => {
                     <h1>Website Apindo Gresik
                     </h1>
 
-                    <Button className='shadow-lg'>Selengkapnya</Button>
+                    <Button variant="outline-primary" className='shadow-lg buttons' onClick={() => goto(refs.tentangRef.current)}>Selengkapnya</Button>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -32,11 +39,11 @@ const CarouselLay = () => {
                 />
 
                 <Carousel.Caption>
-                    <h1>Lorem ipsum dolor sit amet.
+                    <h1>Asosiasi Pengusaha Indonesia
                     </h1>
-                    <h1>consectetur adipisicing elit. Ipsa, dolore?
-                    </h1>
-                    <Button className='shadow-lg'>Selengkapnya</Button>
+                    <h2>Bergabunglah Dengan Kami dan Dapatkan Informasi Terkini Seputar Regulasi atau Issue Bisnis
+                    </h2>
+                    <Button variant="outline-primary" className='shadow-lg' onClick={() => goto(refs.anggotaRef.current)}>Selengkapnya</Button>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -48,11 +55,11 @@ const CarouselLay = () => {
                 />
 
                 <Carousel.Caption>
-                    <h1>Lorem ipsum dolor sit amet.
+                    <h1>Asosiasi Pengusaha Indonesia
                     </h1>
-                    <h1>consectetur adipisicing elit. Ipsa, dolore?
-                    </h1>
-                    <Button className='shadow-lg'>Selengkapnya</Button>
+                    <h2>Organisasi Pengusaha Adalah Organisasi yang Dibentuk untuk Mengatur dan Memajukan Kepentingan Kolektif dari Pengusaha
+                    </h2>
+                    <Button variant="outline-primary" className='shadow-lg' onClick={() => goto(refs.mediaRef.current)}>Selengkapnya</Button>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
