@@ -9,7 +9,7 @@ const NavigationAdmin = ({ refs }) => {
   const navigate = useNavigate();
 const Logout = async() => {
   try {
-    await axios.delete('https://apiwebapindogsk-production.up.railway.app/logout');
+    await axios.delete('https://api-webapindogsk.cyclic.app/logout');
     navigate('/login');
   } catch (error) {
     console.log(error);

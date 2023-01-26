@@ -20,7 +20,7 @@ const SetPictures = () => {
     axiosJWT.interceptors.request.use(async(config) =>{
         const currentDate = new Date();
         if(expire * 1000 < currentDate.getTime()){
-            const response = await axios.get('https://apiwebapindogsk-production.up.railway.app/token');
+            const response = await axios.get('https://api-webapindogsk.cyclic.app/token');
             config.headers.Authorization = `Bearer ${response.data.accessToken}`;
             setToken(response.data.accessToken);
             const decoded = jwt_decode(response.data.accessToken);
@@ -31,12 +31,12 @@ const SetPictures = () => {
         return Promise.reject(error);
     });
     const getPictures = async () => {
-        const response = await axios.get("https://apiwebapindogsk-production.up.railway.app/pictures");
+        const response = await axios.get("https://api-webapindogsk.cyclic.app/pictures");
         setPictures(response.data);
     }
     const deletePicture = async (pictureId) => {
         try {
-            await axios.delete(`https://apiwebapindogsk-production.up.railway.app/pictures/${pictureId}`);
+            await axios.delete(`https://api-webapindogsk.cyclic.app/pictures/${pictureId}`);
             getPictures();
         } catch (error) {
             console.log(error);
@@ -44,7 +44,7 @@ const SetPictures = () => {
     }
     const refreshToken = async () => {
         try {
-            const response = await axios.get('https://apiwebapindogsk-production.up.railway.app/token');
+            const response = await axios.get('https://api-webapindogsk.cyclic.app/token');
             setToken(response.data.accessToken);
             const decoded = jwt_decode(response.data.accessToken);
             setExpire(decoded.exp);
