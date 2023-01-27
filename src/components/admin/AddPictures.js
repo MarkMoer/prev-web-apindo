@@ -55,7 +55,7 @@ const AddPictures = () => {
         formData.append("file", file);
         formData.append("title", title);
         try {
-            await axios.post("https://apiwebapindogsk-production.up.railway.app/pictures", formData, {
+            await axios.post("https://api-webapindogsk.cyclic.app/pictures", formData, {
                 headers: {
                     "Content-type": "multipart/form-data",
                 },
