@@ -19,7 +19,7 @@ const CarouselLay = ({ refs }) => {
                     src={gb1}
                     className="d-block vw-100 vh-100"
                     alt="First slide"
-                    style={{ opacity: 0.5 }}
+                    style={{ opacity: 0.5 , backgroundSize:'cover'}}
                 />
                 <Carousel.Caption>
                     <h1>Selamat Datang di
@@ -35,7 +35,7 @@ const CarouselLay = ({ refs }) => {
                     className="d-block vw-100 vh-100"
                     src={gb2}
                     alt="Second slide"
-                    style={{ opacity: 0.5 }}
+                    style={{ opacity: 0.5 , backgroundSize:'cover'}}
                 />
 
                 <Carousel.Caption>
@@ -51,7 +51,7 @@ const CarouselLay = ({ refs }) => {
                     className="d-block vw-100 vh-100"
                     src={gb3}
                     alt="Third slide"
-                    style={{ opacity: 0.5 }}
+                    style={{ opacity: 0.5 , backgroundSize:'cover'}}
                 />
 
                 <Carousel.Caption>
