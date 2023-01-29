@@ -31,8 +31,9 @@ section .berandaAd{
     font-size: 100px;
 }
 .berandaAd{
-    padding-top: 3rem;
-    color: brown;
+    display:flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
 }
 .jumbotron-picture , .jumbotron-news{
@@ -44,18 +45,20 @@ section .berandaAd{
     text-align: left;
 }
 .dash-admin{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 36px;
+    font-size: 56px;
     font-weight: 500;
     color: #2B2b2b;
     text-shadow: 2px;
     height: 100%;
     width: 100%;
+    
 }
 @media screen and (max-width: 768px) {
     .jumbotron-picture , .jumbotron-news{
         height: 100%;
+        background-color: #eef8ff;
+    }
+    .dash-admin{
+        font-size: 38px;
     }
 }
