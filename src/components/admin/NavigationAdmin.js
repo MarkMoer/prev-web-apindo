@@ -30,16 +30,19 @@ const Logout = async() => {
                 <Nav.Link className={`linkItem ${setActive === active ? "active" : "unactive"}`} eventKey="link-0" href="/admin">Beranda</Nav.Link>
               </Nav.Item>
               <Nav.Item className="linkWrapper">
-                <Nav.Link className={`linkItem ${setActive === active ? "active" : "unactive"}`} eventKey="link-1" href="/admin/pictures">Gambar</Nav.Link>
+                <Nav.Link className={`linkItem ${setActive === active ? "active" : "unactive"}`} eventKey="link-1" href="/admin/forms">Formulir</Nav.Link>
               </Nav.Item>
               <Nav.Item className="linkWrapper">
-                <Nav.Link className={`linkItem ${setActive === active ? "active" : "unactive"}`} eventKey="link-2" href="/admin/news">Berita</Nav.Link>
+                <Nav.Link className={`linkItem ${setActive === active ? "active" : "unactive"}`} eventKey="link-2" href="/admin/pictures">Gambar</Nav.Link>
               </Nav.Item>
               <Nav.Item className="linkWrapper">
-                <Nav.Link className={`linkItem ${setActive === active ? "active" : "unactive"}`} eventKey="link-3" href="/admin/addAdmin">Tambah Admin</Nav.Link>
+                <Nav.Link className={`linkItem ${setActive === active ? "active" : "unactive"}`} eventKey="link-3" href="/admin/news">Berita</Nav.Link>
               </Nav.Item>
               <Nav.Item className="linkWrapper">
-                <Nav.Link className={`linkItem ${setActive === active ? "active" : "unactive"}`} eventKey="link-4" href="javascript:void(0)" onClick={Logout}>Logout</Nav.Link>
+                <Nav.Link className={`linkItem ${setActive === active ? "active" : "unactive"}`} eventKey="link-4" href="/admin/addAdmin">Tambah Admin</Nav.Link>
+              </Nav.Item>
+              <Nav.Item className="linkWrapper">
+                <Nav.Link className={`linkItem ${setActive === active ? "active" : "unactive"}`} eventKey="link-5" href="javascript:void(0)" onClick={Logout}>Logout</Nav.Link>
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>

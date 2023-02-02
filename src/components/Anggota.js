@@ -1,10 +1,6 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
 
 const Anggota = () => {
-    const formLink = () => {
-                const formURL = "https://forms.gle/6wBoCDd5GeLXbhSg9";
-                window.open(formURL);             
-        } 
     return (
         <Container id="Tentang">
             <Row className="text-center mb-3">
@@ -15,7 +11,7 @@ const Anggota = () => {
                 <Col md><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus nam delectus quod recusandae corporis sapiente magni neque voluptatem non repellendus quam molestias blanditiis repellat quidem corrupti optio, error ea culpa.</p></Col>
             </Row>
             <div className="d-grid gap-2 formButton ">
-                <Button variant="outline-dark mt-3 mb-3 text-uppercase" size="lg" onClick={() => formLink()}>
+                <Button variant="outline-dark mt-3 mb-3 text-uppercase" size="lg" href="/anggota/form">
                     Formulir Pendaftaran
                 </Button>
             </div>

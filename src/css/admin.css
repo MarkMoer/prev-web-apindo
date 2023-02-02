@@ -53,6 +53,18 @@ section .berandaAd{
     width: 100%;
     
 }
+.formAdminWrap {
+    padding-top: 5rem;
+}
+/* .formAdmin{
+} */
+.jumbotron-formAdmin{
+    background-color: #eef8ff;
+    font-family: "Montserrat";
+    justify-content: center;        
+    height: 100vh;
+}
+
 @media screen and (max-width: 768px) {
     .jumbotron-picture , .jumbotron-news{
         height: 100%;
