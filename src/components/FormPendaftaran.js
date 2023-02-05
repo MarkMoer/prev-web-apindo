@@ -3,6 +3,8 @@ import { Container, Row, Form, Col, Button } from 'react-bootstrap'
 import "../css/landingPage.css"
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const FormPendaftaran = () => {
     const [namaPerusahaan, setNamaPerusahaan] = useState('');
@@ -31,10 +33,30 @@ const FormPendaftaran = () => {
                 emailPIC: emailPIC,
                 nomorPIC: nomorPIC
             });
+            toast.info('Formulir Berhasil Dikirim', {
+                position: "bottom-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
             navigate('/');
         } catch (error) {
             if (error.response) {
                 setMsg(error.response.data.msg);
+                toast.error(`${msg}`, {
+                    position: "bottom-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
             }
         }
     }

@@ -122,6 +122,9 @@ section{
 .pictures{
     height: 180px;
 }
+.pictures-tentang{
+    height: 320px;
+}
 .card-text{
     font-weight: 700;
 }

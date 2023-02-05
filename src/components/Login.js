@@ -3,6 +3,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import logo from '../img/logo Apindo.png';
 import { Col, Button, Row, Container, Card, Form, Image } from "react-bootstrap";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const [userName, setUserName] = useState('');
@@ -17,10 +19,30 @@ const Login = () => {
                 userName: userName,
                 password: password
             });
+            toast.success('Login Berhasil', {
+                position: "bottom-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
             navigate("/admin");
         } catch (error) {
             if (error.response) {
                 setMsg(error.response.data.msg);
+                toast.error(`${msg}`, {
+                    position: "bottom-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
             }
         }
     }
