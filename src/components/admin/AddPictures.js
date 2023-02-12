@@ -55,7 +55,7 @@ const AddPictures = () => {
         formData.append("file", file);
         formData.append("title", title);
         try {
-            await axios.post("https://api-webapindogsk.cyclic.app/pictures");
+            await axios.post("https://api-webapindogsk.cyclic.app/pictures", formData);
             navigate("/admin/pictures");
         } catch (error) {
             console.log(error);
