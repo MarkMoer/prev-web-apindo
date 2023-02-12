@@ -55,11 +55,19 @@ const AddPictures = () => {
         formData.append("file", file);
         formData.append("title", title);
         try {
-            await axios.post("https://api-webapindogsk.cyclic.app/pictures", formData, {
+            // await axios.post("https://api-webapindogsk.cyclic.app/pictures", formData, {
+            //     headers: {
+            //       "Content-Type": "application/x-www-form-urlencoded",
+            //     },
+            // });
+            await axios({
+                url: 'https://api-webapindogsk.cyclic.app/pictures',
+                method: 'post',
+                data: formData,
                 headers: {
-                  "Content-Type": "application/x-www-form-urlencoded",
-                },
-            });
+                  'Content-Type': 'multipart/form-data'
+                }
+               })
             navigate("/admin/pictures");
         } catch (error) {
             console.log(error);
