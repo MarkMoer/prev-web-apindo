@@ -57,7 +57,7 @@ const AddPictures = () => {
         try {
             await axios.post("https://api-webapindogsk.cyclic.app/pictures", formData, {
                 headers: {
-                  "Content-Type": "multipart/form-data",
+                  "Content-Type": "application/x-www-form-urlencoded",
                 },
             });
             navigate("/admin/pictures");
