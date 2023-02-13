@@ -1,5 +1,5 @@
 import logo from '../../img/logo Apindo.png';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav, Container ,Offcanvas} from 'react-bootstrap';
 import axios from "axios";
 import React, { useState } from 'react';
 import { useNavigate} from 'react-router-dom';
