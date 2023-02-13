@@ -152,7 +152,7 @@ const FormPendaftaran = () => {
                             </Form.Group>
                         </Col>
                     </Row>
-                    <div><Button variant="primary" type="submit">
+                    <div className="mb-2"><Button variant="primary" type="submit">
                         Kirim
                     </Button></div>
                 </Form>

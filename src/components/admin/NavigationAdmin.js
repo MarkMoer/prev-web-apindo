@@ -1,11 +1,11 @@
 import logo from '../../img/logo Apindo.png';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import axios from "axios";
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate} from 'react-router-dom';
 
 
-const NavigationAdmin = ({ refs }) => {
+const NavigationAdmin = (props) => {
   const navigate = useNavigate();
 const Logout = async() => {
   try {
@@ -17,38 +17,48 @@ const Logout = async() => {
 }
   const [active, setActive] = useState("default");
   return (
-    <div id="navbar" className="navbar">
-      <Navbar expand='lg' fixed="top" className='shadow-sm'>
-        <Container>
-          <Navbar.Brand href="/admin">
-            <img src={logo} style={{ width: 110 }} />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="ms-auto" activeKey={active} onSelect={(selectedKey) => setActive(selectedKey)}>
-            <Nav.Item className="linkWrapper">
-                <Nav.Link className={`linkItem ${setActive === active ? "active" : "unactive"}`} eventKey="link-0" href="/admin">Beranda</Nav.Link>
-              </Nav.Item>
-              <Nav.Item className="linkWrapper">
-                <Nav.Link className={`linkItem ${setActive === active ? "active" : "unactive"}`} eventKey="link-1" href="/admin/forms">Formulir</Nav.Link>
-              </Nav.Item>
-              <Nav.Item className="linkWrapper">
-                <Nav.Link className={`linkItem ${setActive === active ? "active" : "unactive"}`} eventKey="link-2" href="/admin/pictures">Gambar</Nav.Link>
-              </Nav.Item>
-              <Nav.Item className="linkWrapper">
-                <Nav.Link className={`linkItem ${setActive === active ? "active" : "unactive"}`} eventKey="link-3" href="/admin/news">Berita</Nav.Link>
-              </Nav.Item>
-              <Nav.Item className="linkWrapper">
-                <Nav.Link className={`linkItem ${setActive === active ? "active" : "unactive"}`} eventKey="link-4" href="/admin/addAdmin">Tambah Admin</Nav.Link>
-              </Nav.Item>
-              <Nav.Item className="linkWrapper">
-                <Nav.Link className={`linkItem ${setActive === active ? "active" : "unactive"}`} eventKey="link-5" href="javascript:void(0)" onClick={Logout}>Logout</Nav.Link>
-              </Nav.Item>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </div>
+    <React.Fragment>
+      {[false].map((expand) => (
+        <Navbar key={expand} bg="light" expand={expand} className="shadow-sm navbarAd" fixed='top'>
+          <Container>
+            <Navbar.Brand href="/">
+              <img src={logo} style={{ width: 110 }} alt='logo' />
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Offcanvas
+              id={`offcanvasNavbar-expand-${expand}`}
+              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+              placement="start"
+            >
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
+                  {props.name}
+                </Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+              <Nav className="ms-auto" activeKey={active} onSelect={(selectedKey) => setActive(selectedKey)}>
+                <Nav.Item className="linkWrapper">
+                  <Nav.Link className={`linkItem ${setActive === active ? "active" : "unactive"}`} eventKey="link-0" href="/admin">Beranda</Nav.Link>
+                </Nav.Item>
+                   <Nav.Item className="linkWrapper">
+                  <Nav.Link className={`linkItem ${setActive === active ? "active" : "unactive"}`} eventKey="link-1" href="/admin/pictures">Gambar</Nav.Link>
+               </Nav.Item>
+               <Nav.Item className="linkWrapper">
+                 <Nav.Link className={`linkItem ${setActive === active ? "active" : "unactive"}`} eventKey="link-2" href="/admin/news">Berita</Nav.Link>
+               </Nav.Item>
+               <Nav.Item className="linkWrapper">
+                 <Nav.Link className={`linkItem ${setActive === active ? "active" : "unactive"}`} eventKey="link-3" href="/admin/addAdmin">Tambah Admin</Nav.Link>
+               </Nav.Item>
+               <Nav.Item className="linkWrapper">
+                 <Nav.Link className={`linkItem ${setActive === active ? "active" : "unactive"}`} eventKey="link-4" href="javascript:void(0)" onClick={Logout}>Logout</Nav.Link>
+               </Nav.Item>
+             </Nav>
+              </Offcanvas.Body>
+            </Navbar.Offcanvas>
+          </Container>
+        </Navbar>
+      ))}
+    </React.Fragment>
   );
 }
 

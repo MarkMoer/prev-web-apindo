@@ -49,7 +49,7 @@ const DashboardAdmin = () => {
     return (
         <React.Fragment>
             <section className='berandaAd' ref={setPicRef}>
-                <NavigationAdmin ref={setPicRef}/>
+                <NavigationAdmin name={name}/>
                 <BerandaAd name={name}/>
             </section>
         </React.Fragment>
