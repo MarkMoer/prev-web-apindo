@@ -16,20 +16,21 @@ const Kontak = () => {
                         Alamat
                     </h4>
                     <Maps/>
-                    <p>Jl. Qomaruddin, Pedukuhan, Kebomas, Kec. Kebomas, Kabupaten Gresik, Jawa Timur</p>
+                    <p className="mb-0">Jl. Qomaruddin, Pedukuhan, Kebomas, Kec. Kebomas, Kabupaten Gresik, Jawa Timur</p>
+                    <p className="fw-bold">Buka: 08:00 - 17:00 WIB</p>
                 </Col>
                 <Col md>
                     <h4>
                         No.Telepon
                     </h4>
                     <p>
-                    <FontAwesomeIcon icon={faPhone}/> : 1234567890
+                    <FontAwesomeIcon icon={faPhone}/> : (031) 3975757
                     </p>
                     <h4>
                         Email
                     </h4>
                     <p>
-                    <FontAwesomeIcon icon={faEnvelope}/> : 1234567890@gmail.com
+                    <FontAwesomeIcon icon={faEnvelope}/> : info@apindojatim.com
                     </p>
                     
                 </Col>

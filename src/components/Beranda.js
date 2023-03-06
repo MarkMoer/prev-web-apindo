@@ -41,7 +41,7 @@ const Beranda = () => {
                     <Tentang />
                 </div>
             </section>
-            <section className="jumbotron" ref={anggotaRef}>
+            <section className="jumbotron-anggota" ref={anggotaRef}>
                 <div data-aos="fade-up"
                     data-aos-duration="2500">
                     <Anggota />
