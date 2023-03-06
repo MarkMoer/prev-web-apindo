@@ -29,6 +29,7 @@ const MediaBerita = () => {
         <React.Fragment>
             <div className='media-berita'>
                 <Container >
+                <p className='pt-2 text-center fs-3'>Berita</p>
                     <Row>
                         {news.map((newsMap) => (
                             <Col md={3} className="pictureWrapper" key={newsMap.id} >

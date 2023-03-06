@@ -29,6 +29,7 @@ const MediaGambar = () => {
         <React.Fragment>
             <div className='media-gambar'>
                 <Container >
+                    <p className='pt-2 text-center fs-3'>Galeri Acara</p>
                     <Row>
                         {pictures.map((picture) => (
                             <Col md={3} className="pictureWrapper" key={picture.id} >
