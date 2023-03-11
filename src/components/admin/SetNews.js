@@ -21,7 +21,7 @@ const SetNews = () => {
     }, []);
     const refreshToken = async () => {
         try {
-            const response = await axios.get('https://api-webapindogsk.cyclic.app/token');
+            const response = await axios.get('https://api-webapindogsk.vercel.app/token');
             setToken(response.data.accessToken);
             const decoded = jwt_decode(response.data.accessToken);
             setExpire(decoded.exp);
@@ -36,7 +36,7 @@ const SetNews = () => {
     axiosJWT.interceptors.request.use(async(config) =>{
         const currentDate = new Date();
         if(expire * 1000 < currentDate.getTime()){
-            const response = await axios.get('https://api-webapindogsk.cyclic.app/token');
+            const response = await axios.get('https://api-webapindogsk.vercel.app/token');
             config.headers.Authorization = `Bearer ${response.data.accessToken}`;
             setToken(response.data.accessToken);
             const decoded = jwt_decode(response.data.accessToken);
@@ -47,13 +47,13 @@ const SetNews = () => {
         return Promise.reject(error);
     });
     const getNews = async () => {
-        const response = await axios.get("https://api-webapindogsk.cyclic.app/news");
+        const response = await axios.get("https://api-webapindogsk.vercel.app/news");
         setNews(response.data);
     }
     
     const deleteNews = async (newsId) => {
         try {
-            await axios.delete(`https://api-webapindogsk.cyclic.app/news/${newsId}`);
+            await axios.delete(`https://api-webapindogsk.vercel.app/news/${newsId}`);
             getNews();
         } catch (error) {
             console.log(error);
@@ -61,7 +61,7 @@ const SetNews = () => {
     }
     const newsView = async (newsId) => {
         try {
-            await axios.get(`https://api-webapindogsk.cyclic.app/media/berita/views/${newsId}` , {responseType: 'blob'}).then(response=>{
+            await axios.get(`https://api-webapindogsk.vercel.app/media/berita/views/${newsId}` , {responseType: 'blob'}).then(response=>{
                 const file = new Blob([response.data] , {type:'application/pdf'});
                 const fileURL = URL.createObjectURL(file);
                 window.open(fileURL); 

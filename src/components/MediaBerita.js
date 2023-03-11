@@ -11,12 +11,12 @@ const MediaBerita = () => {
     }, []);
 
     const getNews = async () => {
-        const response = await axios.get("https://api-webapindogsk.cyclic.app/news");
+        const response = await axios.get("https://api-webapindogsk.vercel.app/news");
         setNews(response.data);
     }
     const newsView = async (newsId) => {
         try {
-            await axios.get(`https://api-webapindogsk.cyclic.app/media/berita/views/${newsId}` , {responseType: 'blob'}).then(response=>{
+            await axios.get(`https://api-webapindogsk.vercel.app/media/berita/views/${newsId}` , {responseType: 'blob'}).then(response=>{
                 const file = new Blob([response.data] , {type:'application/pdf'});
                 const fileURL = URL.createObjectURL(file);
                 window.open(fileURL); 

@@ -12,12 +12,12 @@ const MediaGambar = () => {
     }, []);
 
     const getPictures = async () => {
-        const response = await axios.get("https://api-webapindogsk.cyclic.app/pictures");
+        const response = await axios.get("https://api-webapindogsk.vercel.app/pictures");
         setPictures(response.data);
     }
     const downloadPicture = async (pictureId , pictureName) => {
         try {
-            await axios.get(`https://api-webapindogsk.cyclic.app/downloadPicture/${pictureId}` , {responseType: 'blob'}).then((res)=>{
+            await axios.get(`https://api-webapindogsk.vercel.app/downloadPicture/${pictureId}` , {responseType: 'blob'}).then((res)=>{
                 FileDownload(res.data , `${pictureName}.jpg`)
             });
             

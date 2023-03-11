@@ -22,7 +22,7 @@ const FormPendaftaran = () => {
     const addForm = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('https://api-webapindogsk.cyclic.app/form', {
+            await axios.post('https://api-webapindogsk.vercel.app/form', {
                 namaPerusahaan: namaPerusahaan,
                 alamatPerusahaan: alamatPerusahaan,
                 nomorTeleponPerusahaan: nomorTeleponPerusahaan,

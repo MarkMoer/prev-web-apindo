@@ -16,7 +16,7 @@ const Kontak = () => {
                         Alamat
                     </h4>
                     <Maps/>
-                    <p className="mb-0">Jl. Qomaruddin, Pedukuhan, Kebomas, Kec. Kebomas, Kabupaten Gresik, Jawa Timur</p>
+                    <p className="mb-0">Jl. Panglima Sudirman No.108 Kabupaten Gresik, Jawa Timur 61111</p>
                     <p className="fw-bold">Buka: 08:00 - 17:00 WIB</p>
                 </Col>
                 <Col md>
@@ -24,13 +24,13 @@ const Kontak = () => {
                         No.Telepon
                     </h4>
                     <p>
-                    <FontAwesomeIcon icon={faPhone}/> : (031) 3975757
+                    <FontAwesomeIcon icon={faPhone}/> : 0811-3113-7779
                     </p>
                     <h4>
                         Email
                     </h4>
                     <p>
-                    <FontAwesomeIcon icon={faEnvelope}/> : info@apindojatim.com
+                    <FontAwesomeIcon icon={faEnvelope}/> : apindo.gresik@gmail.com
                     </p>
                     
                 </Col>

@@ -15,7 +15,7 @@ const Login = () => {
     const Auth = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('https://api-webapindogsk.cyclic.app/login', {
+            await axios.post('https://api-webapindogsk.vercel.app/login', {
                 userName: userName,
                 password: password
             });

@@ -12,16 +12,16 @@ const Media = () => {
         getNews();
     }, []);
     const getPictures = async () => {
-        const response = await axios.get("https://api-webapindogsk.cyclic.app/picturesLanding");
+        const response = await axios.get("https://api-webapindogsk.vercel.app/picturesLanding");
         setPictures(response.data);
     }
     const getNews = async () =>{
-        const response = await axios.get("https://api-webapindogsk.cyclic.app/newsLanding");
+        const response = await axios.get("https://api-webapindogsk.vercel.app/newsLanding");
         setNews(response.data);
     }
     const downloadPicture = async (pictureId, pictureName) => {
         try {
-            await axios.get(`https://api-webapindogsk.cyclic.app/downloadPicture/${pictureId}`, { responseType: 'blob' }).then((res) => {
+            await axios.get(`https://api-webapindogsk.vercel.app/downloadPicture/${pictureId}`, { responseType: 'blob' }).then((res) => {
                 FileDownload(res.data, `${pictureName}.jpg`)
             });
 
@@ -31,7 +31,7 @@ const Media = () => {
     }
     const newsView = async (newsId) => {
         try {
-            await axios.get(`https://api-webapindogsk.cyclic.app/media/berita/views/${newsId}` , {responseType: 'blob'}).then(response=>{
+            await axios.get(`https://api-webapindogsk.vercel.app/media/berita/views/${newsId}` , {responseType: 'blob'}).then(response=>{
                 const file = new Blob([response.data] , {type:'application/pdf'});
                 const fileURL = URL.createObjectURL(file);
                 window.open(fileURL); 

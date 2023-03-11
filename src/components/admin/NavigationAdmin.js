@@ -9,7 +9,7 @@ const NavigationAdmin = (props) => {
   const navigate = useNavigate();
 const Logout = async() => {
   try {
-    await axios.delete('https://api-webapindogsk.cyclic.app/logout');
+    await axios.delete('https://api-webapindogsk.vercel.app/logout');
     navigate('/login');
   } catch (error) {
     console.log(error);

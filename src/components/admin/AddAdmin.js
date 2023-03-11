@@ -24,7 +24,7 @@ const AddAdmin = () => {
     axiosJWT.interceptors.request.use(async(config) =>{
         const currentDate = new Date();
         if(expire * 1000 < currentDate.getTime()){
-            const response = await axios.get('https://api-webapindogsk.cyclic.app/token');
+            const response = await axios.get('https://api-webapindogsk.vercel.app/token');
             config.headers.Authorization = `Bearer ${response.data.accessToken}`;
             setToken(response.data.accessToken);
             const decoded = jwt_decode(response.data.accessToken);
@@ -36,7 +36,7 @@ const AddAdmin = () => {
     });
     const refreshToken = async () => {
         try {
-            const response = await axios.get('https://api-webapindogsk.cyclic.app/token');
+            const response = await axios.get('https://api-webapindogsk.vercel.app/token');
             setToken(response.data.accessToken);
             const decoded = jwt_decode(response.data.accessToken);
             setExpire(decoded.exp);
@@ -49,7 +49,7 @@ const AddAdmin = () => {
     const addAdmin = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('https://api-webapindogsk.cyclic.app/admins', {
+            await axios.post('https://api-webapindogsk.vercel.app/admins', {
                 name: name,
                 userName: username,
                 password: password,
