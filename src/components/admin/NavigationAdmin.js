@@ -21,7 +21,7 @@ const Logout = async() => {
       {[false].map((expand) => (
         <Navbar key={expand} bg="light" expand={expand} className="shadow-sm navbarAd" fixed='top'>
           <Container>
-            <Navbar.Brand href="/">
+            <Navbar.Brand href="/admin">
               <img src={logo} style={{ width: 110 }} alt='logo' />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
